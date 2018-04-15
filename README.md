@@ -1,7 +1,11 @@
-# react-konami-code [![npm](https://img.shields.io/npm/dm/react-konami-code.svg)]() [![npm](https://img.shields.io/npm/v/react-konami-code.svg)]()
+# react-konami-code [![npm](https://img.shields.io/npm/v/react-konami-code.svg)]() [![npm](https://img.shields.io/npm/dt/react-konami-code.svg)]() [![GitHub stars](https://img.shields.io/github/stars/vmarchesin/react-konami-code.svg?style=social&label=Star&maxAge=2592000)](https://gitHub.com/vmarchesin/react-konami-code/)
+
+
 Trigger an easter egg by pressing a sequence of keys.
 
 ## Install
+
+[![NPM](https://nodei.co/npm/react-konami-code.png)](https://www.npmjs.com/package/react-konami-code)
 
 ```shell
 npm i react-konami-code -S
@@ -32,7 +36,7 @@ export default class App extends React.Component {
 
 ## Children
 
-The content to be displayed should be passed as `children` inside the `Konami` component. You can however not pass any children, and then just use the [`action`](#action) callback to fire your easter egg. 
+The content to be displayed should be passed as `children` inside the `Konami` component, and it will be wrapped inside a div. You can however not pass any children, and then just use the [`action`](#action) callback to fire your easter egg.
 
 You can pass `children` and [`action`](#action) at the same time to display some content and fire a secondary action.
 
@@ -50,7 +54,7 @@ You can pass `children` and [`action`](#action) at the same time to display some
 #### action
 *Default:* `null`
 
-The callback action that should fire when the code is input.
+The callback action that should fire when the [`code`](#code) is input.
 
 <a name="className"></a>
 #### className
@@ -104,3 +108,7 @@ The timeout to hide the easter egg. When the timeout is finished it will set `di
 ## License
 
 [MIT](https://github.com/vmarchesin/react-konami-code/blob/master/LICENSE)
+
+## Contact
+
+You can reach me on my [Github](https://github.com/vmarchesin) or send an email to [dev@vmarches.in](mailto:dev@vmarches.in).
