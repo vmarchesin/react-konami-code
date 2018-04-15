@@ -1,5 +1,11 @@
 # React Konami Code Changelog
 
+### v1.1.3
+Updated package.json keywords for better searching.
+
+### v1.1.2
+Updated README with badges.
+
 ### v1.1.1
 Initial release.
 
