@@ -1,7 +1,9 @@
-# react-konami-code [![npm](https://img.shields.io/npm/v/react-konami-code.svg)]() [![npm](https://img.shields.io/npm/dt/react-konami-code.svg)]() [![GitHub stars](https://img.shields.io/github/stars/vmarchesin/react-konami-code.svg?style=social&label=Star&maxAge=2592000)](https://gitHub.com/vmarchesin/react-konami-code/)
-
+# react-konami-code [![GitHub stars](https://img.shields.io/github/stars/vmarchesin/react-konami-code.svg?style=social&label=Star&maxAge=2592000)](https://gitHub.com/vmarchesin/react-konami-code/)
 
 Trigger an easter egg by pressing a sequence of keys.
+
+[![npm](https://img.shields.io/npm/v/react-konami-code.svg)]() [![npm](https://img.shields.io/npm/dt/react-konami-code.svg)]() ![Travis](https://img.shields.io/travis/vmarchesin/react-konami-code.svg) [![Coverage Status](https://coveralls.io/repos/github/vmarchesin/react-konami-code/badge.svg?branch=master)](https://coveralls.io/github/vmarchesin/react-konami-code?branch=master) 
+![Maintenance](https://img.shields.io/maintenance/yes/2018.svg)
 
 ## Install
 
