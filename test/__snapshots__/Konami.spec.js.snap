@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test suites should add a className to the wrapping div 1`] = `
+<div
+  className="konami customClass"
+  style={
+    Object {
+      "display": "none",
+    }
+  }
+>
+  Hey, I'm an Easter Egg!
+</div>
+`;
+
+exports[`test suites should render default component 1`] = `
+<div
+  className="konami "
+  style={
+    Object {
+      "display": "none",
+    }
+  }
+>
+  Hey, I'm an Easter Egg!
+</div>
+`;

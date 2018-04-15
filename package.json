@@ -4,7 +4,18 @@
   "description": "Trigger an easter egg by pressing a sequence of keys.",
   "main": "dist/Konami.js",
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest",
+    "test:coverage": "jest --coverage --no-cache"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/jestSetup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "verbose": true
   },
   "repository": {
     "type": "git",
@@ -28,11 +39,16 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
+    "jest": "^22.4.3",
     "path": "^0.12.7",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14"
   },
   "dependencies": {
-    "react": "^16.3.1"
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1"
   }
 }

@@ -26,7 +26,7 @@ class Konami extends React.Component {
     if (disabled) {
       return
     }
-    
+
     if (resetDelay !== 0) {
       this._timer.reset(resetDelay)
     }
@@ -50,13 +50,13 @@ class Konami extends React.Component {
           }, Number(timeout))
         }
       }
-    })
+    })    
   }
 
   resetInput = () => this.setState({ input: [] })
 
   Timer(fn, t) {
-    var timerObj = setInterval(fn, t)
+    let timerObj = setInterval(fn, t)
 
     this.stop = function() {
       if (timerObj) {
