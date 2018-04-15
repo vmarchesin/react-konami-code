@@ -25,7 +25,7 @@ export default class App extends React.Component {
   render = () => (
     <Konami action={this.easterEgg}>
       Hey, I'm an Easter Egg! Look at me!
-    </Konami>;
+    </Konami>
   )
 }
 ```
