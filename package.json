@@ -25,7 +25,10 @@
     "react",
     "konami",
     "konami code",
-    "easter egg"
+    "easter egg",
+    "code",
+    "konamicode",
+    "component"
   ],
   "author": "Vinicius Marchesin Araujo",
   "license": "MIT",
