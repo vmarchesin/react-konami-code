@@ -1,5 +1,8 @@
 # React Konami Code Changelog
 
+### v1.2.2
+Fixes third party vulnerabilities.
+
 ### v1.2.0
 Adds testing and coverage support.
 

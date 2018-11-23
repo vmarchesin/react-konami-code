@@ -1,6 +1,6 @@
 {
   "name": "react-konami-code",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "Trigger an easter egg by pressing a sequence of keys.",
   "main": "dist/Konami.js",
   "scripts": {
@@ -15,6 +15,7 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
+    "testURL": "http://localhost/",
     "verbose": true
   },
   "repository": {
