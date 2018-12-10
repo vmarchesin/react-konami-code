@@ -1,5 +1,8 @@
 # React Konami Code Changelog
 
+### v1.3.0
+Adds typescript support.
+
 ### v1.2.3
 Fixes third party vulnerabilities. v1.2.2 introduced an error with the dist file.
 

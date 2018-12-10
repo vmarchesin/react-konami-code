@@ -29,7 +29,7 @@ import React from 'react'
 import Konami from 'react-konami-code'
 
 export default class App extends React.Component {
-  easterEgg = () => { 
+  easterEgg = () => {
     alert("Hey, you typed the Konami Code!")
   }
 
@@ -38,6 +38,25 @@ export default class App extends React.Component {
       Hey, I'm an Easter Egg! Look at me!
     </Konami>
   )
+}
+```
+
+### TypeScript
+
+```tsx
+import * as React from 'react';
+import Konami from 'react-konami-code'
+
+export default class App extends React.Component {
+  public render = () => (
+    <Konami action={this.easterEgg}>
+      Hey, I'm an Easter Egg! Look at me!
+    </Konami>
+  )
+
+  private easterEgg = () => {
+    alert("Hey, you typed the Konami Code!")
+  }
 }
 ```
 
