@@ -1,13 +1,14 @@
 const React = require('react')
 
 class Konami extends React.Component {
+  timeoutId = 0;
+
   constructor(props) {
     super(props)
 
     this.state = {
       done: false,
       input: [],
-      timeoutObj: null
     }
   }
 
@@ -20,7 +21,7 @@ class Konami extends React.Component {
   }
 
   componentWillUnmount() {
-    clearTimeout(this.state.timeoutObj)
+    clearTimeout(this.timeoutId)
     if (this.props.resetDelay !== 0) {
       this._timer.stop()
     }
@@ -52,12 +53,10 @@ class Konami extends React.Component {
         })
 
         if (timeout) {
-          this.setState({
-            timeoutObj: setTimeout(() => {
-              this.setState({ done: false })
-              onTimeout && onTimeout()
-            }, Number(timeout))
-          })
+          this.timeoutId = setTimeout(() => {
+            this.setState({ done: false })
+            onTimeout && onTimeout()
+          }, Number(timeout))
         }
       }
     })    
