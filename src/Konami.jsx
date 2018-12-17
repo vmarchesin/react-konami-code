@@ -7,6 +7,7 @@ class Konami extends React.Component {
     this.state = {
       done: false,
       input: [],
+      timeoutObj: null
     }
   }
 
@@ -15,6 +16,13 @@ class Konami extends React.Component {
     const delay = Number(this.props.resetDelay)
     if (delay !== 0) {
       this._timer = new this.Timer(() => this.resetInput(), delay)
+    }
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.state.timeoutObj)
+    if (this.props.resetDelay !== 0) {
+      this._timer.stop()
     }
   }
 
@@ -44,10 +52,12 @@ class Konami extends React.Component {
         })
 
         if (timeout) {
-          setTimeout(() => {
-            this.setState({ done: false })
-            onTimeout && onTimeout()
-          }, Number(timeout))
+          this.setState({
+            done: false,
+            timeoutObj: setTimeout(() => {
+              onTimeout && onTimeout()
+            }, Number(timeout))
+          })
         }
       }
     })    
