@@ -53,8 +53,8 @@ class Konami extends React.Component {
 
         if (timeout) {
           this.setState({
-            done: false,
             timeoutObj: setTimeout(() => {
+              this.setState({ done: false })
               onTimeout && onTimeout()
             }, Number(timeout))
           })
