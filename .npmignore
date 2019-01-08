@@ -1,6 +1,8 @@
 coverage
 src
+test
 
 .babelrc
+.eslintrc
 webpack.config.js
 .coveralls.yml
