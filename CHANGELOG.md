@@ -1,5 +1,12 @@
 # React Konami Code Changelog
 
+### v1.4.0
+Fixes the following warning by properly clearing the timeout on `componentWillUnmount`:
+
+```
+Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method.
+```
+
 ### v1.3.0
 Adds typescript support.
 
