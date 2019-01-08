@@ -4,6 +4,10 @@
     "browser": true,
     "jest": true
   },
+  "globals": {
+    "shallow": true,
+    "mount": true
+  },
   "parser": "babel-eslint",
   "rules": {
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],

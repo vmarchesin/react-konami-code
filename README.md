@@ -35,7 +35,7 @@ export default class App extends React.Component {
 
   render = () => (
     <Konami action={this.easterEgg}>
-      Hey, I'm an Easter Egg! Look at me!
+      {"Hey, I'm an Easter Egg! Look at me!"}
     </Konami>
   )
 }
@@ -50,7 +50,7 @@ import Konami from 'react-konami-code';
 export default class App extends React.Component {
   public render = () => (
     <Konami action={this.easterEgg}>
-      Hey, I'm an Easter Egg! Look at me!
+      {"Hey, I'm an Easter Egg! Look at me!"}
     </Konami>
   )
 

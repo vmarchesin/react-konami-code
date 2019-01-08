@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test suites should add a className to the wrapping div 1`] = `
+exports[`Test cases should add a className to the wrapping div 1`] = `
 <div
   className="konami customClass"
   style={
@@ -13,7 +13,7 @@ exports[`test suites should add a className to the wrapping div 1`] = `
 </div>
 `;
 
-exports[`test suites should render default component 1`] = `
+exports[`Test cases should render default component 1`] = `
 <div
   className="konami "
   style={
