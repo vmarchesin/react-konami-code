@@ -1,116 +1,128 @@
-const React = require('react')
+import React from 'react';
 
 class Konami extends React.Component {
-  timeoutId = 0;
-
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       done: false,
       input: [],
-    }
+    };
+
+    this.timeoutFunc = null;
   }
 
   componentDidMount() {
-    document.addEventListener('keyup', this.onKeyUp)
-    const delay = Number(this.props.resetDelay)
+    const { resetDelay } = this.props;
+
+    document.addEventListener('keyup', this.onKeyUp);
+    const delay = Number(resetDelay);
     if (delay !== 0) {
-      this._timer = new this.Timer(() => this.resetInput(), delay)
+      this._timer = new this.Timer(() => this.resetInput(), delay);
     }
   }
 
   componentWillUnmount() {
-    clearTimeout(this.timeoutId)
-    if (this.props.resetDelay !== 0) {
-      this._timer.stop()
+    const { resetDelay } = this.props;
+
+    clearTimeout(this.timeoutFunc);
+    if (resetDelay !== 0) {
+      this._timer.stop();
     }
   }
 
-  onKeyUp = e => {
-    const { done, input } = this.state
-    const { action, code, disabled, onTimeout, timeout } = this.props
-    const resetDelay = Number(this.props.resetDelay)
+  onKeyUp = (e) => {
+    const { done, input } = this.state;
+    const {
+      action, code, disabled, onTimeout, resetDelay, timeout,
+    } = this.props;
+
+    const delay = Number(resetDelay);
 
     if (disabled) {
-      return
+      return;
     }
 
-    if (resetDelay !== 0) {
-      this._timer.reset(resetDelay)
+    if (delay !== 0) {
+      this._timer.reset(delay);
     }
 
-    input.push(e.keyCode)
-    input.splice(-code.length - 1, input.length - code.length)
+    input.push(e.keyCode);
+    input.splice(-code.length - 1, input.length - code.length);
 
     this.setState({ input }, () => {
-      if (this.state.input.join('').includes(code.join('')) && !done) {
-        if (resetDelay !== 0) {
-          this._timer.stop()
+      if (this.state.input.join('').includes(code.join('')) && !done) { /* eslint-disable-line */
+        if (delay !== 0) {
+          this._timer.stop();
         }
-        this.setState({ done: true }, () => { 
-          action && action()
-        })
+        this.setState({ done: true }, () => {
+          if (typeof action === 'function') {
+            action();
+          }
+        });
 
         if (timeout) {
-          this.timeoutId = setTimeout(() => {
-            this.setState({ done: false })
-            onTimeout && onTimeout()
-          }, Number(timeout))
+          this.timeoutFunc = setTimeout(() => {
+            this.setState({ done: false });
+            if (typeof onTimeout === 'function') {
+              onTimeout();
+            }
+          }, Number(timeout));
         }
       }
-    })    
+    });
   }
 
   resetInput = () => this.setState({ input: [] })
 
   Timer(fn, t) {
-    let timerObj = setInterval(fn, t)
+    this.t = t;
+    let timerObj = setInterval(fn, this.t);
 
-    this.stop = function() {
+    this.stop = function stop() {
       if (timerObj) {
-          clearInterval(timerObj)
-          timerObj = null
+        clearInterval(timerObj);
+        timerObj = null;
       }
-      return this
-    }
+      return this;
+    };
 
-    this.start = function() {
+    this.start = function start() {
       if (!timerObj) {
-          this.stop()
-          timerObj = setInterval(fn, t)
+        this.stop();
+        timerObj = setInterval(fn, this.t);
       }
-      return this
-    }
+      return this;
+    };
 
-    this.reset = function(newT) {
-      t = newT
-      return this.stop().start()
-    }
+    this.reset = function reset(newT) {
+      this.t = newT;
+      return this.stop().start();
+    };
   }
 
   render = () => {
-    const { className, disabled } = this.props
-    const { done } = this.state
+    const { children, className, disabled } = this.props;
+    const { done } = this.state;
 
     return (
-      <div 
+      <div
         className={`konami ${className}`}
         style={{ display: (!done || disabled) ? 'none' : 'block' }}
       >
-        {this.props.children}
+        {children}
       </div>
-    )
+    );
   }
 }
 
 Konami.defaultProps = {
   action: null,
-  className: "",
-  code: [38,38,40,40,37,39,37,39,66,65],
+  className: '',
+  code: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
   disabled: false,
   resetDelay: 1000,
   timeout: null,
-}
+};
 
-module.exports = Konami
+export default Konami;

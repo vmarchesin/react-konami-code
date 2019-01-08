@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'; // eslint-disable-line no-unused-vars
 
 export interface KonamiProps {
   className?: string;

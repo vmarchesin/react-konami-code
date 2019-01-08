@@ -1,3 +1,3 @@
-import Konami from "./Konami.jsx"
+import Konami from './Konami';
 
-export default Konami
+export default Konami;
