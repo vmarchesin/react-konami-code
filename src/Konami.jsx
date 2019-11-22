@@ -29,6 +29,7 @@ class Konami extends React.Component {
     if (resetDelay !== 0) {
       this._timer.stop();
     }
+    document.removeEventListener('keyup', this.onKeyUp);
   }
 
   onKeyUp = (e) => {
