@@ -1,5 +1,8 @@
 # React Konami Code Changelog
 
+### v1.4.1
+Unlisten `keyup` event on `componentWillUnmount`.
+
 ### v1.4.0
 Fixes the following warning by properly clearing the timeout on `componentWillUnmount`:
 
