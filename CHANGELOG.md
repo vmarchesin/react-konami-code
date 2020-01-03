@@ -1,6 +1,6 @@
 # React Konami Code Changelog
 
-### v1.4.1
+### v1.4.2
 Unlisten `keyup` event on `componentWillUnmount`.
 
 ### v1.4.0
