@@ -7,6 +7,7 @@ export interface KonamiProps {
   resetDelay?: number;
   action?: () => void;
   timeout?: number;
+  onTimeout?: () => void;
 }
 
 export interface KonamiStates {
