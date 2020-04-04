@@ -1,5 +1,8 @@
 # React Konami Code Changelog
 
+### v1.4.3
+Add missing `onTimeout` to type definitions.
+
 ### v1.4.2
 Unlisten `keyup` event on `componentWillUnmount`.
 
