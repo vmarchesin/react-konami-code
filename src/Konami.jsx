@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Konami extends React.Component {
   constructor(props) {
@@ -117,11 +118,22 @@ class Konami extends React.Component {
   }
 }
 
+Konami.propTypes = {
+  action: PropTypes.func,
+  className: PropTypes.string,
+  code: PropTypes.arrayOf(PropTypes.number),
+  disabled: PropTypes.bool,
+  onTimeout: PropTypes.func,
+  resetDelay: PropTypes.number,
+  timeout: PropTypes.number,
+};
+
 Konami.defaultProps = {
   action: null,
   className: '',
   code: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
   disabled: false,
+  onTimeout: null,
   resetDelay: 1000,
   timeout: null,
 };

@@ -5,8 +5,7 @@ Trigger an easter egg by pressing a sequence of keys.
 [![npm](https://img.shields.io/npm/v/react-konami-code.svg)]()
 [![npm](https://img.shields.io/npm/dt/react-konami-code.svg)]()
 [![gzip size](http://img.badgesize.io/https://npmcdn.com/react-konami-code/dist/Konami.js?compression=gzip)]()
-![Travis](https://img.shields.io/travis/vmarchesin/react-konami-code.svg)
-[![Coverage Status](https://coveralls.io/repos/github/vmarchesin/react-konami-code/badge.svg?branch=master)](https://coveralls.io/github/vmarchesin/react-konami-code?branch=master)
+![Travis](https://travis-ci.org/vmarchesin/react-konami-code.svg?branch=master)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020.svg)
 [![Known Vulnerabilities](https://snyk.io/test/github/vmarchesin/react-konami-code/badge.svg)](https://snyk.io/test/github/vmarchesin/react-konami-code)
 

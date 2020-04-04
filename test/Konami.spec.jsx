@@ -16,16 +16,10 @@ describe('Test cases', () => {
     const wrapper = shallow(<Konami>{'Hey, I\'m an Easter Egg!'}</Konami>);
 
     const instance = wrapper.instance();
-    instance.onKeyUp({ keyCode: 38 });
-    instance.onKeyUp({ keyCode: 37 });
-    instance.onKeyUp({ keyCode: 40 });
-    instance.onKeyUp({ keyCode: 40 });
-    instance.onKeyUp({ keyCode: 37 });
-    instance.onKeyUp({ keyCode: 39 });
-    instance.onKeyUp({ keyCode: 37 });
-    instance.onKeyUp({ keyCode: 39 });
-    instance.onKeyUp({ keyCode: 66 });
-    instance.onKeyUp({ keyCode: 65 });
+    const input = [38, 37, 40, 40, 37, 39, 37, 39, 66, 65];
+    input.forEach((keyCode) => {
+      instance.onKeyUp({ keyCode });
+    });
 
     expect(wrapper.state('done')).toEqual(false);
   });
@@ -35,35 +29,23 @@ describe('Test cases', () => {
     const wrapper = shallow(<Konami action={cb}>{'Hey, I\'m an Easter Egg!'}</Konami>);
 
     const instance = wrapper.instance();
-    instance.onKeyUp({ keyCode: 38 });
-    instance.onKeyUp({ keyCode: 38 });
-    instance.onKeyUp({ keyCode: 40 });
-    instance.onKeyUp({ keyCode: 40 });
-    instance.onKeyUp({ keyCode: 37 });
-    instance.onKeyUp({ keyCode: 39 });
-    instance.onKeyUp({ keyCode: 37 });
-    instance.onKeyUp({ keyCode: 39 });
-    instance.onKeyUp({ keyCode: 66 });
-    instance.onKeyUp({ keyCode: 65 });
+    const input = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+    input.forEach((keyCode) => {
+      instance.onKeyUp({ keyCode });
+    });
 
     expect(wrapper.state('done')).toEqual(true);
-    expect(cb.mock.calls.length).toEqual(1);
+    expect(cb).toHaveBeenCalledTimes(1);
   });
 
   it('should not be done after code input while disabled', () => {
     const wrapper = shallow(<Konami disabled>{'Hey, I\'m an Easter Egg!'}</Konami>);
 
     const instance = wrapper.instance();
-    instance.onKeyUp({ keyCode: 38 });
-    instance.onKeyUp({ keyCode: 38 });
-    instance.onKeyUp({ keyCode: 40 });
-    instance.onKeyUp({ keyCode: 40 });
-    instance.onKeyUp({ keyCode: 37 });
-    instance.onKeyUp({ keyCode: 39 });
-    instance.onKeyUp({ keyCode: 37 });
-    instance.onKeyUp({ keyCode: 39 });
-    instance.onKeyUp({ keyCode: 66 });
-    instance.onKeyUp({ keyCode: 65 });
+    const input = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+    input.forEach((keyCode) => {
+      instance.onKeyUp({ keyCode });
+    });
 
     expect(wrapper.state('done')).toEqual(false);
   });
@@ -92,7 +74,7 @@ describe('Test cases', () => {
 
     setTimeout(() => {
       expect(wrapper.state('done')).toEqual(false);
-      expect(onEnd.mock.calls.length).toEqual(1);
+      expect(onEnd).toHaveBeenCalledTimes(1);
       done();
     }, 1000);
   });
