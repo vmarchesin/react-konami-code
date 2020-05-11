@@ -4,5 +4,7 @@ test
 
 .babelrc
 .eslintrc
+.gitignore
+.travis.yml
+prepublish.sh
 webpack.config.js
-.coveralls.yml
