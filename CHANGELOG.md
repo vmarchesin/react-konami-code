@@ -1,4 +1,7 @@
 # React Konami Code Changelog
+### 2.0.0-beta.1
+Removed usage of `useKonami` custom hook until it's ready to be used.
+
 ### 2.0.0-beta.0
 Add `useKonami` custom hook.
 
