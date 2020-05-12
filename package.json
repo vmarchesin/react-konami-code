@@ -34,7 +34,7 @@
     "konamicode",
     "component"
   ],
-  "author": "Vinicius Marchesin Araujo",
+  "author": "Vinicius Marchesin Araujo <dev@vmarches.in>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vmarchesin/react-konami-code/issues"
