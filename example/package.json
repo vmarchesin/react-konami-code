@@ -1,0 +1,22 @@
+{
+  "name": "react-konami-code-example",
+  "description": "React Konami Code Example",
+  "version": "1.0.0",
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Vinicius Marchesin Araujo <dev@vmarches.in>",
+  "dependencies": {
+    "next": "latest",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-konami-code": "^2.0.0-beta.0"
+  },
+  "resolutions": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

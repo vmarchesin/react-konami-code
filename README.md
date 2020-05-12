@@ -17,8 +17,8 @@ Trigger an easter egg by pressing a sequence of keys. Also available as a custom
 npm i react-konami-code -S
 ```
 
-## Live Example
-* <a href="https://vmarches.in" target="_blank">My personal webpage</a>
+## Example
+Clone this repo and run `npm start` in the `example` folder.
 
 ## Usage
 ### CommonJS Module (Webpack or Browserify)
@@ -29,7 +29,7 @@ import Konami from 'react-konami-code';
 
 export default class App extends React.Component {
   easterEgg = () => {
-    alert("Hey, you typed the Konami Code!");
+    alert('Hey, you typed the Konami Code!');
   }
 
   render = () => (
@@ -54,7 +54,7 @@ export default class App extends React.Component {
   )
 
   private easterEgg = () => {
-    alert("Hey, you typed the Konami Code!");
+    alert('Hey, you typed the Konami Code!');
   }
 }
 ```
@@ -145,12 +145,12 @@ import React from 'react';
 import { useKonami } from 'react-konami-code';
 
 const easterEgg = () => {
-  alert("Hey, you typed the Konami Code!");
+  alert('Hey, you typed the Konami Code!');
 }
 
 export default () => {
   useKonami(easterEgg);
-  return <div />
+  return <div />;
 };
 ```
 

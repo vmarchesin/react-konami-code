@@ -1,6 +1,7 @@
 coverage
 src
 test
+example
 
 .babelrc
 .eslintrc
