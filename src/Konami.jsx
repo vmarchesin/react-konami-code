@@ -11,6 +11,8 @@ class Konami extends React.Component {
     };
 
     this.timeoutFunc = null;
+    this.onKeyUp = this.onKeyUp.bind(this);
+    this.resetInput = this.resetInput.bind(this);
   }
 
   componentDidMount() {
@@ -33,7 +35,7 @@ class Konami extends React.Component {
     document.removeEventListener('keyup', this.onKeyUp);
   }
 
-  onKeyUp = (e) => {
+  onKeyUp(e) {
     const { done, input } = this.state;
     const {
       action, code, disabled, onTimeout, resetDelay, timeout,
@@ -75,7 +77,9 @@ class Konami extends React.Component {
     });
   }
 
-  resetInput = () => this.setState({ input: [] })
+  resetInput() {
+    this.setState({ input: [] });
+  }
 
   Timer(fn, t) {
     this.t = t;
@@ -103,7 +107,7 @@ class Konami extends React.Component {
     };
   }
 
-  render = () => {
+  render() {
     const { children, className, disabled } = this.props;
     const { done } = this.state;
 
