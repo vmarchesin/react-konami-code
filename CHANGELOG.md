@@ -1,4 +1,6 @@
 # React Konami Code Changelog
+### 2.0.0-beta.0
+Add `useKonami` custom hook.
 
 ### v1.4.3
 Add missing `onTimeout` to type definitions.
