@@ -1,6 +1,6 @@
 # react-konami-code [![GitHub stars](https://img.shields.io/github/stars/vmarchesin/react-konami-code.svg?style=social&label=Star&maxAge=2592000)](https://gitHub.com/vmarchesin/react-konami-code/)
 
-Trigger an easter egg by pressing a sequence of keys.
+Trigger an easter egg by pressing a sequence of keys. Also available as a custom hook.
 
 [![npm](https://img.shields.io/npm/v/react-konami-code.svg)]()
 [![npm](https://img.shields.io/npm/dt/react-konami-code.svg)]()
@@ -58,6 +58,10 @@ export default class App extends React.Component {
   }
 }
 ```
+
+### Custom Hook
+
+Refer to the [Using the custom Hook](#hooks) section.
 
 ## Component
 
@@ -130,6 +134,40 @@ The delay interval on which you need to start the input again. If you set it to 
 *Default:* `null`
 
 The timeout to hide the easter egg. When the timeout is finished it will set `display: none` to the wrapping div and will fire [`onTimeout`](#onTimeout). By default it runs forever. Value should be in ms.
+
+<a name="hooks"></a>
+## Using the custom Hook
+
+If you want to call an action without rendering children or handling timeouts it's recommended to use the `useKonami` hook.
+
+```jsx
+import React from 'react';
+import { useKonami } from 'react-konami-code';
+const easterEgg = () => {
+  alert('Hey, you typed the Konami Code!');
+}
+export default () => {
+  useKonami(easterEgg);
+  return <div />;
+};
+```
+
+### API
+`useKonami(action, [options])`
+
+<a name="hooks-action"></a>
+#### action
+*Required*
+
+The callback action that should fire when the [`code`](#hooks-options) is input.
+
+<a name="hooks-options"></a>
+#### options
+  - code
+
+    *Default:* `[38,38,40,40,37,39,37,39,66,65]`
+
+    An array with the sequence of keyCodes necessary to trigger the [`action`](#hooks-action). Refer to main [`code`](#code) section for the keyCodes.
 
 ## License
 
