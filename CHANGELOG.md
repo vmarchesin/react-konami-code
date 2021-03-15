@@ -1,5 +1,8 @@
 # React Konami Code Changelog
 
+### 2.1.1
+Updated package description and improved documentation.
+
 ### 2.1.0
 Readded `useKonami` hook.
 
