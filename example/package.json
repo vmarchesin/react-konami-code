@@ -13,7 +13,7 @@
     "next": "latest",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-konami-code": "file:.."
+    "react-konami-code": "file:react-konami-code-2.0.1-beta.1.tgz"
   },
   "resolutions": {
     "react": "^16.13.1",
