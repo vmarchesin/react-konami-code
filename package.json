@@ -1,7 +1,7 @@
 {
   "name": "react-konami-code",
   "version": "2.1.0",
-  "description": "Trigger an easter egg by pressing a sequence of keys.",
+  "description": "Trigger an easter egg by pressing a sequence of keys. Available as a component or a custom hook. Supports timeout and input debounce/reset.",
   "main": "dist/Konami.js",
   "types": "dist/Konami.d.ts",
   "scripts": {

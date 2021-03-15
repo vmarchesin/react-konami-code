@@ -81,13 +81,13 @@ You can pass `children` and [`action`](#action) at the same time to display some
 * [`timeout`](#timeout)
 
 <a name="action"></a>
-#### action
+#### action `function`
 *Default:* `null`
 
 The callback action that should fire when the [`code`](#code) is input.
 
 <a name="className"></a>
-#### className
+#### className `string`
 *Default:* `""`
 
 CSS classes can be applied to the div wrapping your secret content. By default the div will always have the `konami` className.
@@ -105,7 +105,7 @@ will result in:
 ```
 
 <a name="code"></a>
-#### code
+#### code `Array<number>`
 *Default:* `[38,38,40,40,37,39,37,39,66,65]`
 
 An array with the sequence of keyCodes necessary to trigger the [`action`](#action). The default code is the Konami Code: `↑ ↑ ↓ ↓ ← → ← → B A`
@@ -113,24 +113,24 @@ An array with the sequence of keyCodes necessary to trigger the [`action`](#acti
 You can find the keyCodes for each character [here](https://www.w3.org/2002/09/tests/keys.html).
 
 <a name="disabled"></a>
-#### disabled
+#### disabled `boolean`
 *Default:* `false`
 
 If the trigger should be disabled or not. This is dynamic and you can enable/disable at will. The [`action`](#action) callback will only trigger when `disabled == false`.
 
 <a name="onTimeout"></a>
-#### onTimeout
+#### onTimeout `function`
 
 The callback to fire when the [`timeout`](#timeout) is finished, if any.
 
 <a name="resetDelay"></a>
-#### resetDelay
+#### resetDelay `number`
 *Default:* `1000`
 
 The delay interval on which you need to start the input again. If you set it to `0` it will never reset the user input. Value should be in ms.
 
 <a name="timeout"></a>
-#### timeout
+#### timeout `number`
 *Default:* `null`
 
 The timeout to hide the easter egg. When the timeout is finished it will set `display: none` to the wrapping div and will fire [`onTimeout`](#onTimeout). By default it runs forever. Value should be in ms.
@@ -156,13 +156,13 @@ export default () => {
 `useKonami(action, [options])`
 
 <a name="hooks-action"></a>
-#### action
+#### action `function`
 *Required*
 
 The callback action that should fire when the [`code`](#hooks-options) is input.
 
 <a name="hooks-options"></a>
-#### options
+#### options `object`
   - code
 
     *Default:* `[38,38,40,40,37,39,37,39,66,65]`
