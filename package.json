@@ -1,6 +1,6 @@
 {
   "name": "react-konami-code",
-  "version": "2.0.1-beta.1",
+  "version": "2.1.0",
   "description": "Trigger an easter egg by pressing a sequence of keys.",
   "main": "dist/Konami.js",
   "types": "dist/Konami.d.ts",
