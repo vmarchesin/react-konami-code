@@ -52,16 +52,7 @@ class Timer {
 class Konami extends React.Component<KonamiProps, KonamiStates> {
   private timeoutFunc: ReturnType<typeof setTimeout> | null | undefined;
   private _timer: any;
-
-  static defaultProps = {
-    action: null,
-    className: '',
-    code: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
-    disabled: false,
-    onTimeout: null,
-    resetDelay: 1000,
-    timeout: null,
-  };
+  static defaultProps: KonamiProps;
 
   constructor(props: KonamiProps) {
     super(props);
@@ -163,5 +154,12 @@ class Konami extends React.Component<KonamiProps, KonamiStates> {
     );
   }
 }
+
+Konami.defaultProps = {
+  className: '',
+  code: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+  disabled: false,
+  resetDelay: 1000,
+};
 
 export default Konami;
