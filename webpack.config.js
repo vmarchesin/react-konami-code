@@ -24,6 +24,9 @@ module.exports = {
           },
         },
       },
+      {
+        loader: 'ts-loader',
+      },
     ],
   },
   resolve: {
