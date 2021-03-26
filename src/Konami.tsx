@@ -114,7 +114,6 @@ class Konami extends React.Component<KonamiProps, KonamiStates> {
 
     this.setState({ input }, () => {
       if (this.state.input.join('').includes(code?.join('') ?? '') && !done) {
-        /* eslint-disable-line */
         if (delay !== 0) {
           this._timer.stop();
         }
