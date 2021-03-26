@@ -17,28 +17,28 @@ export interface KonamiStates {
 
 class Timer {
   t: number;
-  timerObj: number | null;
+  timerIntervalID: number | null;
   fn: TimerHandler;
 
   constructor(fn: () => void, t: number) {
     this.t = t;
     this.fn = fn;
 
-    this.timerObj = setInterval(this.fn, this.t);
+    this.timerIntervalID = setInterval(this.fn, this.t);
   }
 
   stop() {
-    if (this.timerObj) {
-      clearInterval(this.timerObj);
-      this.timerObj = null;
+    if (this.timerIntervalID) {
+      clearInterval(this.timerIntervalID);
+      this.timerIntervalID = null;
     }
     return this;
   }
 
   start() {
-    if (!this.timerObj) {
+    if (!this.timerIntervalID) {
       this.stop();
-      this.timerObj = setInterval(this.fn, this.t);
+      this.timerIntervalID = setInterval(this.fn, this.t);
     }
     return this;
   }
