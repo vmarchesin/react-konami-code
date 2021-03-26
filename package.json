@@ -12,8 +12,10 @@
     "test:coverage": "jest --coverage --no-cache"
   },
   "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom",
     "setupFiles": [
-      "./test/jestSetup.js"
+      "./test/jestSetup.ts"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
