@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     path: path.resolve('dist'),
     filename: 'Konami.js',
@@ -11,19 +11,23 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|ts)x?$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/react'],
+            presets: [
+              '@babel/preset-env',
+              '@babel/react',
+              '@babel/preset-typescript',
+            ],
           },
         },
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.tsx', '.ts'],
   },
   externals: [
     {
