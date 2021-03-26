@@ -50,7 +50,7 @@ class Timer {
 }
 
 class Konami extends React.Component<KonamiProps, KonamiStates> {
-  private timeoutFunc: ReturnType<typeof setTimeout> | null | undefined;
+  private timeoutID: ReturnType<typeof setTimeout> | null | undefined;
   private _timer: any;
   static defaultProps: KonamiProps;
 
@@ -62,7 +62,7 @@ class Konami extends React.Component<KonamiProps, KonamiStates> {
       input: [],
     };
 
-    this.timeoutFunc = null;
+    this.timeoutID = null;
     this.onKeyUp = this.onKeyUp.bind(this);
     this.resetInput = this.resetInput.bind(this);
   }
@@ -80,7 +80,7 @@ class Konami extends React.Component<KonamiProps, KonamiStates> {
   componentWillUnmount() {
     const { resetDelay } = this.props;
 
-    clearTimeout(Number(this.timeoutFunc ?? undefined));
+    clearTimeout(Number(this.timeoutID ?? undefined));
     if (resetDelay !== 0) {
       this._timer.stop();
     }
@@ -125,7 +125,7 @@ class Konami extends React.Component<KonamiProps, KonamiStates> {
         });
 
         if (timeout) {
-          this.timeoutFunc = setTimeout(() => {
+          this.timeoutID = setTimeout(() => {
             this.setState({ done: false });
             if (typeof onTimeout === 'function') {
               onTimeout();
