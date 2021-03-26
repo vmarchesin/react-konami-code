@@ -1,12 +1,13 @@
 import { useEffect, useState, useCallback } from 'react';
 
-export default (action, {
-  code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
-} = {}) => {
-  const [input, setInput] = useState([]);
+export default (
+  action: () => void,
+  { code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65] } = {}
+) => {
+  const [input, setInput] = useState<number[]>([]);
 
   const onKeyUp = useCallback(
-    (e) => {
+    (e: KeyboardEvent) => {
       const newInput = input;
       newInput.push(e.keyCode);
       newInput.splice(-code.length - 1, input.length - code.length);
@@ -17,7 +18,7 @@ export default (action, {
         action();
       }
     },
-    [input, setInput, code, action],
+    [input, setInput, code, action]
   );
 
   useEffect(() => {
