@@ -1,4 +1,4 @@
-function equals(arr1: number[] | undefined, arr2: number[] | undefined) {
+function equals(arr1: number[] | undefined, arr2: number[] | undefined): boolean {
   if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
     return false;
   }
