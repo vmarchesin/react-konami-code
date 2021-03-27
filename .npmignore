@@ -7,5 +7,5 @@ example
 .eslintrc
 .gitignore
 .travis.yml
-prepublish.sh
 webpack.config.js
+tsconfig.json
