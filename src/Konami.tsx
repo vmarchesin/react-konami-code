@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { Requireable } from 'react';
+
+import PropTypes from 'prop-types';
 
 export interface KonamiProps {
   className?: string;
@@ -49,10 +51,22 @@ class Timer {
   }
 }
 
+const propTypes = {
+  action: PropTypes.func,
+  className: PropTypes.string,
+  code: PropTypes.arrayOf(PropTypes.number),
+  disabled: PropTypes.bool,
+  onTimeout: PropTypes.func,
+  resetDelay: PropTypes.number,
+  timeout: PropTypes.number,
+};
+
 class Konami extends React.Component<KonamiProps, KonamiStates> {
   private timeoutID: ReturnType<typeof setTimeout> | null | undefined;
   private _timer: any;
   static defaultProps: KonamiProps;
+
+  static propTypes: typeof propTypes;
 
   constructor(props: KonamiProps) {
     super(props);
@@ -155,11 +169,6 @@ class Konami extends React.Component<KonamiProps, KonamiStates> {
   }
 }
 
-Konami.defaultProps = {
-  className: '',
-  code: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
-  disabled: false,
-  resetDelay: 1000,
-};
+Konami.propTypes = propTypes;
 
 export default Konami;
