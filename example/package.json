@@ -11,12 +11,12 @@
   "author": "Vinicius Marchesin Araujo <dev@vmarches.in>",
   "dependencies": {
     "next": "latest",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-konami-code": "file:react-konami-code-2.1.0.tgz"
+    "react": "latest",
+    "react-dom": "latest",
+    "react-konami-code": "file:react-konami-code-2.2.0.tgz"
   },
   "resolutions": {
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react": "latest",
+    "react-dom": "latest"
   }
 }
