@@ -1,5 +1,8 @@
 # React Konami Code Changelog
 
+### 2.2.1
+Fix bug with disabled condition change not triggering a render
+
 ### 2.2.0
 - Migrated library to TS: full TS support.
 - Added optimization using `shouldComponentUpdate`. Avoids rerenders for every timer interval and input.

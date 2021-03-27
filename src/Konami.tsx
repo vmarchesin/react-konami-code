@@ -71,7 +71,9 @@ class Konami extends React.Component<KonamiProps, KonamiState> {
   }
 
   shouldComponentUpdate(nextProps: KonamiProps, nextState: KonamiState) {
-    if (this.props.className !== nextProps.className) {
+    if (this.props.className !== nextProps.className ||
+        this.props.disabled !== nextProps.disabled
+    ) {
       return true;
     }
     return this.state.done !== nextState.done;
