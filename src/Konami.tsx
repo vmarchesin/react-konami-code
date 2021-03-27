@@ -169,6 +169,13 @@ class Konami extends React.Component<KonamiProps, KonamiStates> {
   }
 }
 
+Konami.defaultProps = {
+  className: '',
+  code: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+  disabled: false,
+  resetDelay: 1000,
+};
+
 Konami.propTypes = propTypes;
 
 export default Konami;
