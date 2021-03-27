@@ -5,9 +5,10 @@
   "main": "dist/Konami.js",
   "types": "dist/Konami.d.ts",
   "scripts": {
+    "prebuild": "rm -rf ./dist",
     "build": "webpack --mode production",
     "lint": "eslint src/*",
-    "prepublish": "sh prepublish.sh",
+    "prepublish": "npm run build",
     "test": "jest",
     "test:coverage": "jest --coverage --no-cache"
   },
