@@ -80,7 +80,8 @@ class Konami extends React.Component<KonamiProps, KonamiStates> {
   componentWillUnmount() {
     const { resetDelay } = this.props;
 
-    clearTimeout(Number(this.timeoutID ?? undefined));
+    if (this.timeoutID) clearTimeout(this.timeoutID);
+
     if (resetDelay !== 0) {
       this._timer.stop();
     }
