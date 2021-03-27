@@ -1,9 +1,9 @@
 import { useEffect, useState, useCallback } from 'react';
 
-export default (
+function useKonami(
   action: () => void,
   { code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65] } = {},
-) => {
+) {
   const [input, setInput] = useState<number[]>([]);
 
   const onKeyUp = useCallback(
@@ -28,3 +28,5 @@ export default (
     };
   }, [onKeyUp]);
 };
+
+export default useKonami;
