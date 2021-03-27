@@ -1,6 +1,8 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
+
+import Timer from './utils/Timer';
+import arrayUtils from './utils/array';
 
 export interface KonamiProps {
   className?: string;
@@ -15,40 +17,6 @@ export interface KonamiProps {
 export interface KonamiStates {
   done: boolean;
   input: number[];
-}
-
-class Timer {
-  t: number;
-  timerIntervalID: number | null;
-  fn: TimerHandler;
-
-  constructor(fn: () => void, t: number) {
-    this.t = t;
-    this.fn = fn;
-
-    this.timerIntervalID = setInterval(this.fn, this.t);
-  }
-
-  stop() {
-    if (this.timerIntervalID) {
-      clearInterval(this.timerIntervalID);
-      this.timerIntervalID = null;
-    }
-    return this;
-  }
-
-  start() {
-    if (!this.timerIntervalID) {
-      this.stop();
-      this.timerIntervalID = setInterval(this.fn, this.t);
-    }
-    return this;
-  }
-
-  reset(newT: number) {
-    this.t = newT;
-    return this.stop().start();
-  }
 }
 
 const propTypes = {
@@ -128,7 +96,7 @@ class Konami extends React.Component<KonamiProps, KonamiStates> {
     if (code) input.splice(-code.length - 1, input.length - code.length);
 
     this.setState({ input }, () => {
-      if (this.state.input.join('').includes(code?.join('') ?? '') && !done) {
+      if (arrayUtils.equals(this.state.input, code) && !done) {
         if (delay !== 0) {
           this._timer.stop();
         }
