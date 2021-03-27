@@ -13,7 +13,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-konami-code": "file:react-konami-code-2.2.0.tgz"
+    "react-konami-code": "file:react-konami-code-2.2.1.tgz"
   },
   "resolutions": {
     "react": "latest",
