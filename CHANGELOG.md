@@ -1,5 +1,10 @@
 # React Konami Code Changelog
 
+### 2.2.0
+- Migrated library to TS: full TS support.
+- Added optimization using `shouldComponentUpdate`. Avoids rerenders for every timer interval and input.
+
+
 ### 2.1.1
 Updated package description and improved documentation.
 

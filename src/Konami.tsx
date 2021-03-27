@@ -14,7 +14,7 @@ export interface KonamiProps {
   onTimeout?: () => void;
 }
 
-export interface KonamiStates {
+export interface KonamiState {
   done: boolean;
   input: number[];
 }
@@ -29,7 +29,7 @@ const propTypes = {
   timeout: PropTypes.number,
 };
 
-class Konami extends React.Component<KonamiProps, KonamiStates> {
+class Konami extends React.Component<KonamiProps, KonamiState> {
   private timeoutID: ReturnType<typeof setTimeout> | null | undefined;
   private _timer: any;
   static defaultProps: KonamiProps;
@@ -70,6 +70,13 @@ class Konami extends React.Component<KonamiProps, KonamiStates> {
     document.removeEventListener('keyup', this.onKeyUp);
   }
 
+  shouldComponentUpdate(nextProps: KonamiProps, nextState: KonamiState) {
+    if (this.props.className !== nextProps.className) {
+      return true;
+    }
+    return this.state.done !== nextState.done;
+  }
+
   onKeyUp(e: KeyboardEvent) {
     const { done, input } = this.state;
     const {
@@ -93,7 +100,9 @@ class Konami extends React.Component<KonamiProps, KonamiStates> {
 
     input.push(e.keyCode);
 
-    if (code) input.splice(-code.length - 1, input.length - code.length);
+    if (code) {
+      input.splice(-code.length - 1, input.length - code.length);
+    }
 
     this.setState({ input }, () => {
       if (arrayUtils.equals(this.state.input, code) && !done) {
