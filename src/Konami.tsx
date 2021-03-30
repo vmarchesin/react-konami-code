@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Timer from './utils/Timer';
 import arrayUtils from './utils/array';
+import { KONAMI_CODE } from './utils/consts';
 
 export interface KonamiProps {
   className?: string;
@@ -150,7 +151,7 @@ class Konami extends React.Component<KonamiProps, KonamiState> {
 
 Konami.defaultProps = {
   className: '',
-  code: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+  code: KONAMI_CODE,
   disabled: false,
   resetDelay: 1000,
 };

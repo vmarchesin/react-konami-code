@@ -1,5 +1,6 @@
 import React from 'react';
 import Konami from '../src';
+import { KONAMI_CODE } from '../src/utils/consts';
 import { shallow } from 'enzyme';
 
 describe('Test cases', () => {
@@ -38,7 +39,7 @@ describe('Test cases', () => {
     );
 
     const instance = wrapper.instance();
-    const input = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+    const input = KONAMI_CODE;
     input.forEach((keyCode) => {
       const event = new KeyboardEvent('keyup', { keyCode });
       instance.onKeyUp(event);
@@ -54,7 +55,7 @@ describe('Test cases', () => {
     );
 
     const instance = wrapper.instance();
-    const input = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+    const input = KONAMI_CODE;
     input.forEach((keyCode) => {
       const event = new KeyboardEvent('keyup', { keyCode });
       instance.onKeyUp(event);

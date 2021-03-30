@@ -1,9 +1,8 @@
 import { useEffect, useState, useCallback } from 'react';
 
-function useKonami(
-  action: () => void,
-  { code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65] } = {},
-) {
+import { KONAMI_CODE } from './utils/consts';
+
+function useKonami(action: () => void, { code = KONAMI_CODE } = {}) {
   const [input, setInput] = useState<number[]>([]);
 
   const onKeyUp = useCallback(
@@ -27,6 +26,6 @@ function useKonami(
       document.removeEventListener('keyup', onKeyUp);
     };
   }, [onKeyUp]);
-};
+}
 
 export default useKonami;
