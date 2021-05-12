@@ -1,5 +1,7 @@
 # React Konami Code Changelog
 
+### 2.2.2
+Fix type export definition.
 ### 2.2.1
 Fix bug with disabled condition change not triggering a render
 
