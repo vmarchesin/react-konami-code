@@ -3,6 +3,7 @@ src
 test
 example
 
+.prettierrc
 .babelrc
 .eslintrc
 .gitignore
