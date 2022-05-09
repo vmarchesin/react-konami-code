@@ -13,7 +13,7 @@
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-konami-code": "file:react-konami-code-2.2.2.tgz"
+    "react-konami-code": "file:react-konami-code-2.3.0.tgz"
   },
   "resolutions": {
     "react": "18.1.0",
