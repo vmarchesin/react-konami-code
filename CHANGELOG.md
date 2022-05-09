@@ -1,5 +1,10 @@
 # React Konami Code Changelog
 
+### 2.3.0
+Package updates and fixes
+- Updated multiple dependencies
+- Fix TS error for children props
+- Lint updates
 ### 2.2.2
 Fix type export definition.
 ### 2.2.1
