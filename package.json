@@ -4,6 +4,7 @@
   "description": "Trigger an easter egg by pressing a sequence of keys. Available as a component or a custom hook. Supports timeout and input debounce/reset.",
   "main": "dist/Konami.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "prebuild": "rm -rf ./dist",
     "build": "webpack --mode production",

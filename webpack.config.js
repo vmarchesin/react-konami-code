@@ -1,12 +1,11 @@
-const path = require('path');
+import path from 'path';
 
-module.exports = {
+export default {
   mode: 'production',
   entry: './src/index.ts',
   output: {
     path: path.resolve('dist'),
     filename: 'Konami.js',
-    libraryTarget: 'commonjs2',
   },
   module: {
     rules: [
