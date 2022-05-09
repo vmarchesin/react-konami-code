@@ -10,4 +10,4 @@ function equals(arr1: number[] | undefined, arr2: number[] | undefined): boolean
   return arr1.every((value, index) => value === arr2[index]);
 }
 
-export default { equals }
+export default { equals };

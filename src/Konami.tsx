@@ -10,9 +10,10 @@ export interface KonamiProps {
   code?: number[];
   disabled?: boolean;
   resetDelay?: number;
-  action?: () => void;
+  action?: (() => void) | null;
   timeout?: number;
-  onTimeout?: () => void;
+  onTimeout?: (() => void) | null;
+  children?: React.ReactNode;
 }
 
 export interface KonamiState {
@@ -60,6 +61,15 @@ class Konami extends React.Component<KonamiProps, KonamiState> {
     }
   }
 
+  shouldComponentUpdate(nextProps: KonamiProps, nextState: KonamiState) {
+    if (this.props.className !== nextProps.className
+      || this.props.disabled !== nextProps.disabled
+    ) {
+      return true;
+    }
+    return this.state.done !== nextState.done;
+  }
+
   componentWillUnmount() {
     const { resetDelay } = this.props;
 
@@ -69,15 +79,6 @@ class Konami extends React.Component<KonamiProps, KonamiState> {
       this._timer.stop();
     }
     document.removeEventListener('keyup', this.onKeyUp);
-  }
-
-  shouldComponentUpdate(nextProps: KonamiProps, nextState: KonamiState) {
-    if (this.props.className !== nextProps.className ||
-        this.props.disabled !== nextProps.disabled
-    ) {
-      return true;
-    }
-    return this.state.done !== nextState.done;
   }
 
   onKeyUp(e: KeyboardEvent) {
@@ -108,7 +109,7 @@ class Konami extends React.Component<KonamiProps, KonamiState> {
     }
 
     this.setState({ input }, () => {
-      if (arrayUtils.equals(this.state.input, code) && !done) {
+      if (arrayUtils.equals(this.state.input, code) && !done) { // eslint-disable-line
         if (delay !== 0) {
           this._timer.stop();
         }
@@ -154,6 +155,10 @@ Konami.defaultProps = {
   code: KONAMI_CODE,
   disabled: false,
   resetDelay: 1000,
+  children: null,
+  action: null,
+  onTimeout: null,
+  timeout: 0,
 };
 
 Konami.propTypes = propTypes;
